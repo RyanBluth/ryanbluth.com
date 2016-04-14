@@ -43,6 +43,14 @@ body{
     color:#747369;
 }
 
+.fc-blue{
+    color: #7daf9c;
+}
+
+.fc-red{
+    color: #ef5d32;
+}
+
 .underline{
     text-decoration: underline;
 }
@@ -55,8 +63,8 @@ body{
 
 .center-vertical{
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
+  transform: translateY(-40%);
 }
 
 .fill-width{
@@ -92,4 +100,16 @@ h4{
 
 #base-content{
     height: 100%;
+}
+
+/* font-awesome */
+.fa { 
+    display:inline; 
+    vertical-align: middle;
+}
+
+/*Index*/
+.profile-img{
+    width: 150px;
+    height: auto;
 }

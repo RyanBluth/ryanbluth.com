@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
     <link rel="stylesheet" href="{% static 'css/reset.css'%}" />
     <link rel="stylesheet" href="{%static 'css/main/global.css'%}"/>
@@ -23,28 +24,32 @@
 
     <title>Ryan Bluth</title>
 </head>
-
 <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
     <div class="navbar" role="navigation">
-        <h4 class="fc-subdue fw-norm nav-item">RYAN BLUTH</h4>
+        <div class="nav-item">
+            <a href="/" class="nav-link nav-item">RYAN BLUTH</a>
+        </div>
         <div class="tab">
-            <h4 class="fc-subdue fw-norm nav-item tab">Projects</h4>
-            <h4 class="fc-subdue fw-norm nav-item tab">SweetHeart Squad</h4>
-            <h4 class="fc-subdue fw-norm nav-item tab">Contact</h4>
+            <a href="/projects" class="nav-item nav-link tab"><i class="fa fa-circle{% ifnotequal request.path "/projects/" %}-thin{% endifnotequal %} nav-bullet" aria-hidden="true"></i> Projects</a>
+            {% if 'project' in request.get_full_path or request.session.opened_projects %}
+            <div class="tab">
+              <a href="/project/s-tengine2" class="nav-item nav-link"><i class="fa fa-circle{% ifnotequal request.path "/project/s-tengine2/" %}-thin{% endifnotequal %} nav-bullet" aria-hidden="true"></i> S-Tengine&nbsp;2</a>
+              <a href="/project/s-tengine2" class="nav-item nav-link"><i class="fa fa-circle{% ifnotequal request.path "/project/s-tengine2/" %}-thin{% endifnotequal %} nav-bullet" aria-hidden="true"></i> Mangy&nbsp;Bat</a>
+            </div>
+            {% endif %}
+            <a href="/contact" class="nav-item nav-link"><i class="nav-bullet fa fa-circle{% ifnotequal request.path "/contact/" %}-thin{% endifnotequal %}" aria-hidden="true"></i> Contact</a>
+            <a href="http://sweetheartsquad.com" class="nav-link nav-item"><i class="fa fa-circle-thin nav-bullet" aria-hidden="true"></i> SweetHeart&nbsp;Squad</a>
         </div>
     </div>
 
     <div id="base-content" class="base-content">
         {% block content %}
         {% endblock %}
-    </div>
-
+    </div
 </body>
-
 {% block js_resources %}{% endblock %}
 
 </html>

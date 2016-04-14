@@ -2,10 +2,10 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 
-import main.views
+import main.urls
 
 urlpatterns = patterns('',
-                     (r'^$', main.views.index)
+                     url(r'^', include('main.urls'))
                        )
 
 urlpatterns += []

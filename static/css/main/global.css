@@ -113,3 +113,16 @@ h4{
     width: 150px;
     height: auto;
 }
+
+/*Projects*/
+.project-logo-wide{
+    max-width:250px;
+    max-height:250px;
+    margin:15px;
+}
+
+.project-logo-tall{
+    max-width:250px;
+    max-height:150px;
+    margin:15px;
+}
